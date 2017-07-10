@@ -41,10 +41,8 @@ final class TestBot: Bot {
         sendActivity = Signal()
     }
     
-    @discardableResult
-    func dispatch(activity: Activity) -> DispatchResult {
+    func dispatch(activity: Activity) {
         lastActivity = activity
-        return .ok
     }
 }
 
@@ -74,7 +72,11 @@ class ConnectorDispatcherTests: XCTestCase {
                                 localTimestamp: Date(),
                                 text: "Hello, World!")
         provider.receive(activity: activity)
-        
+        let exp = self.expectation(description: "Async message")
+        DispatchQueue.main.async {
+            exp.fulfill()
+        }
+        self.wait(for: [exp], timeout: 1)
         XCTAssertEqual(bot.lastActivity?.text, "Hello, World!")
     }
     
