@@ -11,7 +11,7 @@ extension Health: RoutesFactory {
     func routes() -> Routes {
         var routes = Routes(baseUri: "/health")
         routes.add(method: .get,  uri: "", handler: healthCheck)
-        return routes;
+        return routes
     }
     
     private func healthCheck(request: HTTPRequest, response: HTTPResponse) {

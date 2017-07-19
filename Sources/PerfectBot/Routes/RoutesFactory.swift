@@ -8,4 +8,3 @@ import PerfectHTTP
 internal protocol RoutesFactory {
     func routes() -> Routes
 }
-

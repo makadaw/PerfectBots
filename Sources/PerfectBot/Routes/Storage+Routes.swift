@@ -18,13 +18,13 @@ internal final class StorageRoutes: RoutesFactory {
         var routes = Routes(baseUri: "/storage")
         routes.add(method: .get,  uri: "/fetch", handler: storageFetchHandler)
         routes.add(method: .get,  uri: "/store", handler: storageStoreHandler)
-        return routes;
+        return routes
     }
     
     private func storageFetchHandler(request: HTTPRequest, response: HTTPResponse) {
         response.setHeader(.contentType, value: "text/plain")
         do {
-            let storage = try Storage(dsn: dsn);
+            let storage = try Storage(dsn: dsn)
             let value = try storage.fetch( request.param(name: "key")! )
             response.appendBody(string: "Value: \(String(describing: value))")
             response.completed(status: .ok)
@@ -39,7 +39,7 @@ internal final class StorageRoutes: RoutesFactory {
         
         response.setHeader(.contentType, value: "text/plain")
         do {
-            let storage = try Storage(dsn: dsn);
+            let storage = try Storage(dsn: dsn)
             try storage.store( key, value )
             response.appendBody(string: "Stored")
             response.completed(status: .ok)

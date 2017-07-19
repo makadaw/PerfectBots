@@ -29,8 +29,8 @@ public final class Configuration {
     
     internal init(_ configuration: [String:Any]) {
         port = Int(configuration["PORT"] as? String ?? "8080")!
-        dbURL = configuration["CLEARDB_DATABASE_URL"] as! String
-        
+        // swiftlint:disable force_cast
+        dbURL = configuration["CLEARDB_DATABASE_URL"] as! String        
         fbSubscribeToken = configuration["FACEBOOK_SUBSCRIBE_TOKEN"] as! String
         fbPageAccessToken = configuration["FACEBOOK_PAGE_ACCESS_TOKEN"] as! String
     }

@@ -17,7 +17,7 @@ Log.logger = log.perfectLogger()
 do {
 	// Launch the servers based on the configuration data.
     let server = HTTPServer()
-    server.serverName = "localhost";
+    server.serverName = "localhost"
     server.serverPort = UInt16(Configuration().port)
     server.documentRoot = "./webroot"
     
@@ -33,6 +33,3 @@ do {
 } catch {
     log.log(.error, msg: error.localizedDescription, functionName: #function, lineNum: #line, fileName: #file)
 }
-
-
-

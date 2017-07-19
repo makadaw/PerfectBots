@@ -1,4 +1,3 @@
-
 import Foundation
 import PerfectCURL
 
@@ -8,20 +7,21 @@ func testFunc() -> String {
 
 class SpellCheker {
     
-    internal func sendRequest(text: String, completion: @escaping (String?) -> (Void))
+    internal func sendRequest(text: String, completion: @escaping (String?) -> Void)
     {
         do {
             let body = self.textInBodyFormat(text: text)
-            let json = try CURLRequest("https://montanaflynn-spellcheck.p.mashape.com/check?text=" + body, .failOnError,
+            let url  = "https://montanaflynn-spellcheck.p.mashape.com/check?text=" + body
+            let key  = "OA5qHL58kvmshkz5xa4FQowNtD3tp1cD0n2jsnPY9TFf28l8Ka"
+            let json = try CURLRequest(url, .failOnError,
                                        .httpMethod(CURLRequest.HTTPMethod.get),
-                                       .addHeader(.fromStandard(name: "X-Mashape-Key"), "OA5qHL58kvmshkz5xa4FQowNtD3tp1cD0n2jsnPY9TFf28l8Ka"),
+                                       .addHeader(.fromStandard(name: "X-Mashape-Key"), key),
                                        .addHeader(.fromStandard(name: "Accept"), "application/json")
                 ).perform().bodyJSON
             
             let suggestion = self.suggestionFromJSON(json: json)
             completion(suggestion)
-        }
-        catch let error {
+        } catch let error {
             fatalError("\(error)")
         }        
     }
@@ -34,11 +34,9 @@ class SpellCheker {
     
     private func suggestionFromJSON(json: [String:Any]) -> String?
     {
-//        print("json: \(json)")
         guard let result = json["suggestion"] as? String else {
             return nil
         }
         return result
     }
 }
-

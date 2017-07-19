@@ -20,8 +20,8 @@ extension ReplyRequest {
         let json = [
             "recipient": ["id": self.recepientId ],
             "message": ["text": self.messageText]
-        ];
+        ]
         
-        return json;
+        return json
     }
 }

@@ -13,7 +13,6 @@ import protocol PerfectLib.Logger
     import Darwin
 #endif
 
-
 extension HeliumLogger {
     fileprivate final class PerfectLoggerBridge: PerfectLib.Logger {
         let logger: HeliumLogger

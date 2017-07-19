@@ -54,7 +54,7 @@ public struct Account {
 }
 
 extension Account: Equatable {
-    public static func ==(lhs: Account, rhs: Account) -> Bool {
+    public static func == (lhs: Account, rhs: Account) -> Bool {
         return lhs.id == rhs.id
     }
 }
@@ -79,7 +79,7 @@ public struct Conversation {
 }
 
 extension Conversation: Equatable {
-    public static func ==(lhs: Conversation, rhs: Conversation) -> Bool {
+    public static func == (lhs: Conversation, rhs: Conversation) -> Bool {
         return lhs.channelId == rhs.channelId
             && lhs.activityId == lhs.activityId
     }

@@ -1,5 +1,5 @@
 import MySQL
-import Foundation;
+import Foundation
 
 // MySQL documentation: https://github.com/PerfectlySoft/PerfectDocs/blob/master/guide/MySQL.md
 // URLComponents: https://developer.apple.com/reference/foundation/urlcomponents
@@ -10,8 +10,9 @@ import Foundation;
 // maybe support the following Types: String, Int, [String], [Int], [String:String], [String:Int], [Int:String], [Int:Int]
 // I guess we present ourselves as a [String:Any]
 
+// swiftlint:disable line_length
 public class Storage {
-    var mysql:MySQL;
+    var mysql:MySQL
     let storageTable = "swiftbot_storage"
     
     enum StorageError: Error {
@@ -21,7 +22,7 @@ public class Storage {
     }
 
     public init(dsn dsnString: String) throws {
-        mysql = MySQL();
+        mysql = MySQL()
         guard let dsn = URLComponents(string:dsnString) else { throw StorageError.dsnError }
         if dsn.scheme != "mysql" { throw StorageError.dsnError }
         

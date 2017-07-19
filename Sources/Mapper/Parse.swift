@@ -51,7 +51,7 @@ internal func parseOptional(_ json: JSON, key: KeyPath) throws -> Any? {
             if !key.optional {
                 throw ParseError.missedKey(key: key, of: json)
             } else {
-                return nil;
+                return nil
             }
         }
         result = value
@@ -59,7 +59,6 @@ internal func parseOptional(_ json: JSON, key: KeyPath) throws -> Any? {
     }
     return result
 }
-
 
 internal func cast<T>(_ object: Any) throws -> T {
     guard let result = object as? T else {
@@ -78,8 +77,6 @@ internal func parseOptional<T>(_ json: JSON, key: KeyPath, parser: ((Any) throws
     }
     return try parser(object)
 }
-
-
 
 // MARK: Operations
 
@@ -110,6 +107,7 @@ public func =>? <T:Mappable>(lhs: JSON, rhs: KeyPath) throws -> T? {
 // More
 public func => (lhs: JSON, rhs: KeyPath) throws -> [Any] {
     return try parse(lhs, key: rhs, parser: {
+        // swiftlint:disable force_cast
         $0 as! [Any]
     })
 }
@@ -140,11 +138,11 @@ extension Optional {
 
 extension Array where Element: Mappable {
     internal static func mapped(_ json: Any) throws -> [Element] {
-        return try [Element].mapped(json, decoder: { (o: Any) -> Element? in
-            guard let element = try? Element.mapped(json: o) else {
-                return nil;
+        return try [Element].mapped(json, decoder: { (object: Any) -> Element? in
+            guard let element = try? Element.mapped(json: object) else {
+                return nil
             }
-            return element;
+            return element
         })
     }
 }
@@ -152,8 +150,8 @@ extension Array where Element: Mappable {
 extension Array {
     public static func mapped(_ json: JSON, decoder: @escaping (Any) -> Element? ) throws -> [Element] {
         let object:[Any] = try cast(json)
-        return object.flatMap { (o:Any) -> Element? in
-            return decoder(o)
+        return object.flatMap { (object:Any) -> Element? in
+            return decoder(object)
         }
     }
 }
@@ -178,4 +176,3 @@ extension Date: Mappable {
         return Date(timeIntervalSince1970: Double(time/1000))
     }
 }
-

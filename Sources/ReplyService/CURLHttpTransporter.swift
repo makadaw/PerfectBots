@@ -24,6 +24,6 @@ class CURLHttpTransporter: HttpTransporter
         }
         
         let request = CURLRequest(url.absoluteString, options:options)
-        return try request.perform().bodyString;
+        return try request.perform().bodyString
     }
 }

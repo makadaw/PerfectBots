@@ -10,7 +10,7 @@ internal final class IndexRoutes: RoutesFactory {
     func routes() -> Routes {
         var index = Routes(baseUri: "/")
         
-        index.add(method: .get, uri: "/", handler: { request, response in
+        index.add(method: .get, uri: "/", handler: { _, response in
             Log.info("Log from index page ")
             // Respond with a simple message.
             response.setHeader(.contentType, value: "text/html")

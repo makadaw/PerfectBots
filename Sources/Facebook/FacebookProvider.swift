@@ -34,7 +34,7 @@ public final class FacebookProvider: Provider {
     public func send(activity: Activity) {
         replyService.send(replyRequest: activity) { (responce) in
             if let error = responce.error {
-                Log.error(error.localizedDescription);
+                Log.error(error.localizedDescription)
             }
             
             if let body = responce.body {
@@ -74,8 +74,8 @@ extension FacebookProvider {
                 status: "page",
                 channelId: $0.id,
                 activityId: "facebook")
-            $0.messaging.forEach{ (o) in
-                switch (o) {
+            $0.messaging.forEach{ (object) in
+                switch (object) {
                 case .message(let details, let message):
                     let from = Account(id: details.sender, name: "")
                     let recipient = Account(id: details.recipient, name: "")
@@ -96,4 +96,3 @@ extension FacebookProvider {
         }
     }
 }
-

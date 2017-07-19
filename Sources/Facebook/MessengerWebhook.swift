@@ -19,7 +19,7 @@ public final class MessengerWebhook {
     }
 }
 
-// MARK Requests
+// MARK: Requests
 
 public final class Entry {
     
@@ -53,7 +53,7 @@ public final class Entry {
     }
 }
 
-// MARK Message
+// MARK: Message
 
 public final class Message {
     public let mid: String
@@ -94,7 +94,7 @@ public struct QuickReply {
     let payload: String
 }
 
-// MARK Delivery
+// MARK: Delivery
 
 public final class Delivery {
     public let mids: [String]
@@ -108,7 +108,7 @@ public final class Delivery {
     }
 }
 
-// MARK Read
+// MARK: Read
 
 public final class Read {
     public let watermark: Int
@@ -120,8 +120,7 @@ public final class Read {
     }
 }
 
-
-// MARK Parsed
+// MARK: Parsed
 
 extension MessengerWebhook.Request: Mappable {
     public static func mapped(json: JSON) throws -> MessengerWebhook.Request {

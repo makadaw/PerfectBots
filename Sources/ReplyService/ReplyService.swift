@@ -10,7 +10,7 @@ import Foundation
 
 public final class ReplyService {
     
-    private let accessToken: String;
+    private let accessToken: String
     
     private let facebookGraph = FacebookGraph(httpTransporter: CURLHttpTransporter())
         
@@ -18,7 +18,7 @@ public final class ReplyService {
         self.accessToken = accessToken
     }
     
-    public func send(replyRequest: ReplyRequest, _ callback: (_ response: ReplyResponse)->())
+    public func send(replyRequest: ReplyRequest, _ callback: (_ response: ReplyResponse) -> Void)
     {
         let json = replyRequest.generateFacebookMessageSendJSON()
         

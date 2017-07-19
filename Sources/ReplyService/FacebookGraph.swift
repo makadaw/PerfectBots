@@ -15,7 +15,7 @@ final class FacebookGraph {
     let httpTransporter : HttpTransporter
     
     init(httpTransporter: HttpTransporter) {
-        self.httpTransporter = httpTransporter;
+        self.httpTransporter = httpTransporter
     }
     
     private func buildUrl(request: FacebookGraphRequest) -> URL? {
@@ -42,4 +42,3 @@ final class FacebookGraph {
         }
     }
 }
-

@@ -52,4 +52,3 @@ internal final class Application {
         routes.append(storage)
     }
 }
-

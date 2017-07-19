@@ -15,11 +15,11 @@ public struct ReplyResponse {
     
     init(body: String) {
         self.body  = body
-        self.error = nil;
+        self.error = nil
     }
     
     init(error: Error) {
-        self.body  = nil;
+        self.body  = nil
         self.error = error
     }
 }

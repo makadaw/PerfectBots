@@ -3,10 +3,9 @@
 //  BotsKit
 //
 
-
 public class Signal<T> {
     fileprivate var value: T?
-    fileprivate var callbacks: [(T)->Void] = []
+    fileprivate var callbacks: [(T) -> Void] = []
     
     public class func create() -> (input: SignalInput<T>, signal: Signal<T>) {
         let signal = Signal()
@@ -17,7 +16,7 @@ public class Signal<T> {
         return value
     }
     
-    public func subscribe(_ callback: @escaping (T)->Void) {
+    public func subscribe(_ callback: @escaping (T) -> Void) {
         callbacks.append(callback)
         if let value = self.value {
             callback(value)
@@ -56,4 +55,3 @@ public final class SignalInput<T>: Input {
         return true
     }
 }
-

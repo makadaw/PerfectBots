@@ -19,7 +19,7 @@ public struct KeyPath: ExpressibleByStringLiteral, ExpressibleByArrayLiteral, Cu
     
     public init(_ path: String, optional: Bool) {
         self.path = [path]
-        self.optional = optional;
+        self.optional = optional
     }
     
 // MARK: ExpressibleByStringLiteral
@@ -42,13 +42,11 @@ public struct KeyPath: ExpressibleByStringLiteral, ExpressibleByArrayLiteral, Cu
     
     // MARK: CustomStringConvertible
     public var description: String {
-        get {
-            return self.path.description
-        }
+        return self.path.description
     }
     
 // MARK: Equatable
-    public static func ==(lhs: KeyPath, rhs: KeyPath) -> Bool {
+    public static func == (lhs: KeyPath, rhs: KeyPath) -> Bool {
         return lhs.path == rhs.path
     }
 }

@@ -25,4 +25,3 @@ public protocol HttpTransporter
 {
     func sendRequest(url: URL, method: HttpTransporterMethod, headers:[String: String], data: Data?) throws -> String
 }
-

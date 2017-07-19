@@ -14,7 +14,7 @@ extension FacebookProvider: RoutesFactory {
         var routes = Routes(baseUri: "/webhook")
         routes.add(method: .get,  uri: "", handler: webhookChallenge)
         routes.add(method: .post, uri: "", handler: webhookHandler)
-        return routes;
+        return routes
     }
     
     private func webhookChallenge(request: HTTPRequest, response: HTTPResponse) {
@@ -29,12 +29,12 @@ extension FacebookProvider: RoutesFactory {
                     response.completed(status: .ok)
                     Log.info("Subscribe mode challenge done")
                 case .error(let error):
-                    response.status = .forbidden;
+                    response.status = .forbidden
                     Log.warning(error)
                 }
             } else {
-                Log.warning("Invalid Subscribe Token in request \(request.params())");
-                response.status = .forbidden;
+                Log.warning("Invalid Subscribe Token in request \(request.params())")
+                response.status = .forbidden
             }
         } else {
             response.setBody(string: "")
