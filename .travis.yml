@@ -8,7 +8,6 @@ services:
 
 before_install:
   - brew update
-  - brew install swiftlint
   - brew install mysql
   # - mysql -e 'CREATE DATABASE IF NOT EXISTS swiftbot;'
 
