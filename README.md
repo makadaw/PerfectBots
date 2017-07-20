@@ -1,6 +1,6 @@
 ## Swift Bot
 
-[![Build Status](https://travis-ci.org/makadaw/SwiftBot.svg?branch=develop)](https://travis-ci.org/makadaw/SwiftBot)
+[![Build Status](https://travis-ci.org/SwiftyBots/PerfectBots.svg?branch=develop)](https://travis-ci.org/SwiftyBots/PerfectBots)
 
 It is going to do these tasks:
 - Remind you about things
