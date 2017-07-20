@@ -18,3 +18,9 @@ install:
 script:
   - make lint
   - make test
+
+cache:
+  directories:
+    - .build/checkouts
+    - .build/repositories
+    - .build/workspace-state.json
