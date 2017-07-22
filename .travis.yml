@@ -6,6 +6,12 @@ osx_image: xcode8.3
 services: 
   - mysql
 
+cache:
+  directories:
+    - .build/checkouts
+    - .build/repositories
+    - .build/workspace-state.json
+
 before_install:
   - brew update
   - brew install mysql
@@ -19,8 +25,4 @@ script:
   - make lint
   - make test
 
-cache:
-  directories:
-    - .build/checkouts
-    - .build/repositories
-    - .build/workspace-state.json
+
