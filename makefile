@@ -7,13 +7,13 @@ install:
 	Scripts/install.py Sources/SwiftBot/config.swift
 
 generate:
-	swift package generate-xcodeproj
+	swift package -Xlinker -L/usr/local/lib generate-xcodeproj 
 
 test:
-	swift test
+	swift test -Xlinker -L/usr/local/lib
 
 build:
-	swift build
+	swift build -Xlinker -L/usr/local/lib
 	
 lint:
 	@if which swiftlint >/dev/null; then swiftlint; else echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"; fi	

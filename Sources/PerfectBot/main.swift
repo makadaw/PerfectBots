@@ -21,7 +21,7 @@ do {
     server.serverPort = UInt16(Configuration().port)
     server.documentRoot = "./webroot"
     
-    let application = Application(configuration: Configuration())
+    let application = try Application(configuration: Configuration())
     
     // Set routes
     application.routes.forEach{ server.addRoutes($0.routes()) }

@@ -8,6 +8,7 @@ import BotsKit
 import Facebook
 import EchoBot
 import Health
+import LoggerAPI
 
 /// Main object that connect components for chat bot application.
 /// This class init and store chat providers, dispatcher and
@@ -18,15 +19,16 @@ internal final class Application {
     /// Chat messages dispatcher connect messages from providers to bots
     let dispatcher = ConnectorDispatcher()
     internal var routes: [RoutesFactory]
+//    internal let connectionPool: ConnectionPool
     
-    init(configuration: Configuration) {
+    init(configuration: Configuration) throws {
         // Init default routes
         routes = [IndexRoutes()]
+//        connectionPool =
         
         // Start application
         healthChecks()
         startBots(configuration: configuration)
-        storage(configuration: configuration)
     }
     
     private func healthChecks() {
@@ -47,8 +49,4 @@ internal final class Application {
         routes.append(facebook)
     }
     
-    private func storage(configuration: Configuration) {
-        let storage = StorageRoutes(dsn: configuration.dbURL)
-        routes.append(storage)
-    }
 }

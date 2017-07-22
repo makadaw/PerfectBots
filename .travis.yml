@@ -13,7 +13,7 @@ before_install:
 
 install:
   - swift package --enable-prefetching fetch
-  - swift build
+  - make build 
 
 script:
   - make lint

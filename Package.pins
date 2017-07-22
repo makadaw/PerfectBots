@@ -2,10 +2,16 @@
   "autoPin": true,
   "pins": [
     {
+      "package": "CMySQL",
+      "reason": null,
+      "repositoryURL": "https://github.com/IBM-Swift/CMySQL.git",
+      "version": "0.1.1"
+    },
+    {
       "package": "COpenSSL",
       "reason": null,
       "repositoryURL": "https://github.com/PerfectlySoft/Perfect-COpenSSL.git",
-      "version": "2.0.4"
+      "version": "2.0.5"
     },
     {
       "package": "Health",
@@ -26,46 +32,40 @@
       "version": "1.7.0"
     },
     {
-      "package": "MySQL",
-      "reason": null,
-      "repositoryURL": "https://github.com/PerfectlySoft/Perfect-MySQL.git",
-      "version": "2.1.2"
-    },
-    {
       "package": "PerfectCURL",
       "reason": null,
       "repositoryURL": "https://github.com/PerfectlySoft/Perfect-CURL.git",
-      "version": "2.1.4"
+      "version": "2.1.5"
     },
     {
       "package": "PerfectCrypto",
       "reason": null,
       "repositoryURL": "https://github.com/PerfectlySoft/Perfect-Crypto.git",
-      "version": "1.0.8"
+      "version": "1.0.9"
     },
     {
       "package": "PerfectHTTP",
       "reason": null,
       "repositoryURL": "https://github.com/PerfectlySoft/Perfect-HTTP.git",
-      "version": "2.2.0"
+      "version": "2.2.3"
     },
     {
       "package": "PerfectHTTPServer",
       "reason": null,
       "repositoryURL": "https://github.com/PerfectlySoft/Perfect-HTTPServer.git",
-      "version": "2.2.0"
+      "version": "2.2.15"
     },
     {
       "package": "PerfectLib",
       "reason": null,
       "repositoryURL": "https://github.com/PerfectlySoft/PerfectLib.git",
-      "version": "2.0.10"
+      "version": "2.0.11"
     },
     {
       "package": "PerfectNet",
       "reason": null,
       "repositoryURL": "https://github.com/PerfectlySoft/Perfect-Net.git",
-      "version": "2.1.9"
+      "version": "2.1.17"
     },
     {
       "package": "PerfectThread",
@@ -74,16 +74,22 @@
       "version": "2.0.12"
     },
     {
+      "package": "SwiftKuery",
+      "reason": null,
+      "repositoryURL": "https://github.com/IBM-Swift/Swift-Kuery.git",
+      "version": "0.13.2"
+    },
+    {
+      "package": "SwiftKueryMySQL",
+      "reason": null,
+      "repositoryURL": "https://github.com/IBM-Swift/SwiftKueryMySQL",
+      "version": "0.13.0"
+    },
+    {
       "package": "cURL",
       "reason": null,
       "repositoryURL": "https://github.com/PerfectlySoft/Perfect-libcurl.git",
-      "version": "2.0.4"
-    },
-    {
-      "package": "mysqlclient",
-      "reason": null,
-      "repositoryURL": "https://github.com/PerfectlySoft/Perfect-mysqlclient.git",
-      "version": "2.0.0"
+      "version": "2.0.6"
     }
   ],
   "version": 1

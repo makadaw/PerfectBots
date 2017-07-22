@@ -21,27 +21,27 @@ extension HeliumLogger {
             self.logger = logger
         }
         
-        public func debug(message: String) {
+        func debug(message: String, _ even: Bool) {
             logger.log(.debug, msg: message, functionName: "", lineNum: 0, fileName: "Perfect")
         }
         
-        public func info(message: String) {
+        func info(message: String, _ even: Bool) {
             logger.log(.info, msg: message, functionName: "", lineNum: 0, fileName: "Perfect")
         }
         
-        public func warning(message: String) {
+        func warning(message: String, _ even: Bool) {
             logger.log(.warning, msg: message, functionName: "", lineNum: 0, fileName: "Perfect")
         }
         
-        public func error(message: String) {
+        func error(message: String, _ even: Bool) {
             logger.log(.error, msg: message, functionName: "", lineNum: 0, fileName: "Perfect")
         }
         
-        public func critical(message: String) {
+        func critical(message: String, _ even: Bool) {
             logger.log(.error, msg: message, functionName: "", lineNum: 0, fileName: "Perfect")
         }
         
-        public func terminal(message: String) {
+        func terminal(message: String, _ even: Bool) {
             logger.log(.error, msg: message, functionName: "", lineNum: 0, fileName: "Perfect")
         }
     }
