@@ -18,11 +18,11 @@ extension FacebookProvider: RoutesFactory {
     }
     
     private func webhookChallenge(request: HTTPRequest, response: HTTPResponse) {
-        if let mode = request.param(name: "hub.mode"), mode == "subscribe" {
+        if let mode = request.param(name: Endpoints.challengeModeKey), mode == Endpoints.challengeMode {
             Log.info("Starting subscribe mode challenge")
             
-            if let token = request.param(name: "hub.verify_token"),
-                let challenge = request.param(name: "hub.challenge") {
+            if let token = request.param(name: Endpoints.verifyTokenKey),
+                let challenge = request.param(name: Endpoints.challengeKey) {
                 switch (self.take(challenge: challenge, token: token)) {
                 case .ok(let answer):
                     response.appendBody(string: answer)

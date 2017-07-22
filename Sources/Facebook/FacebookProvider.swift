@@ -9,6 +9,14 @@ import Mapper
 import ReplyService
 import LoggerAPI
 
+public struct Endpoints {
+    public static let challengeModeKey = "hub.mode"
+    public static let challengeMode = "subscribe"
+    
+    public static let verifyTokenKey = "hub.verify_token"
+    public static let challengeKey = "hub.challenge"
+}
+
 public final class FacebookProvider: Provider {
     internal let accessToken: String
     internal let secretToken: String
